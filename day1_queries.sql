@@ -39,6 +39,7 @@ mysql> INSERT INTO retail_sales
 Query OK, 15 rows affected (0.01 sec)
 Records: 15  Duplicates: 0  Warnings: 0
 
+-- View all data
 mysql> SELECT * FROM retail_sales;
 +----------+------------+-------------+---------------+------------+--------------+-------------+----------+-------+-----------+
 | order_id | order_date | customer_id | customer_name | product_id | product_name | category    | quantity | price | city      |
@@ -61,6 +62,7 @@ mysql> SELECT * FROM retail_sales;
 +----------+------------+-------------+---------------+------------+--------------+-------------+----------+-------+-----------+
 15 rows in set (0.00 sec)
 
+-- Select specific columns
 mysql> SELECT customer_name, product_name FROM orders;
 ERROR 1146 (42S02): Table 'retail_db.orders' doesn't exist
 mysql> SELECT customer_name, product_name, price FROM retail_sales;
@@ -85,7 +87,9 @@ mysql> SELECT customer_name, product_name, price FROM retail_sales;
 +---------------+--------------+-------+
 15 rows in set (0.00 sec)
 
+-- Limit rows
 mysql> SELECT * FROM retail_sales LIMIT 10;
+    
 +----------+------------+-------------+---------------+------------+--------------+-------------+----------+-------+-----------+
 | order_id | order_date | customer_id | customer_name | product_id | product_name | category    | quantity | price | city      |
 +----------+------------+-------------+---------------+------------+--------------+-------------+----------+-------+-----------+

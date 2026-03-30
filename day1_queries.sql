@@ -4,8 +4,6 @@ mysql> LOAD DATA LOCAL INFILE 'C:/mysql_data/retail_sales_dataset.csv'
     -> ENCLOSED BY '"'
     -> LINES TERMINATED BY '\n'
     -> IGNORE 1 ROWS;
-ERROR 1046 (3D000): No database selected
-mysql> Terminal close -- exit!
 mysql> CREATE DATABASE retail_db;
 Query OK, 1 row affected (0.03 sec)
 

@@ -71,3 +71,22 @@ ERROR 1054 (42S22): Unknown column 'Age' in 'where clause'
 mysql> SELECT * FROM customers WHERE Age < 25 OR Total_Amount > 2000;
 ERROR 1054 (42S22): Unknown column 'Total_Amount' in 'where clause'
 mysql> Terminal close -- exit!
+
+
+
+-- Reuse employees table
+
+SELECT * FROM employees
+WHERE salary > 50000;
+
+SELECT * FROM employees
+WHERE salary BETWEEN 30000 AND 60000;
+
+SELECT * FROM employees
+WHERE department IN ('HR', 'IT');
+
+SELECT * FROM employees
+WHERE name LIKE 'A%';
+
+SELECT * FROM employees
+WHERE department = 'IT' AND salary > 50000;

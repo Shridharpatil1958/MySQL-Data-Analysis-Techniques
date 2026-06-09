@@ -1,31 +1,97 @@
-# 📊 MySQL Data Analysis Techniques (15 Days Challenge)
+<div align="center">
 
-## 🚀 Project Overview
+# 📊 MySQL Data Analysis Techniques
+### 15 Days SQL Challenge for Data Analysts
 
-This repository contains a **15-day structured learning roadmap for MySQL**, designed to build strong data analysis skills from **basic queries to advanced real-world problem solving**.
-
-The project uses a **Retail Database** with multiple related tables such as customers, products, orders, and payments to simulate real business scenarios.
-
----
-
-## 🏗️ Database Schema
-
-The dataset is designed to represent a real-world retail system with the following tables:
-
-* 👥 Customers
-* 🛍️ Products
-* 📦 Categories
-* 🚚 Suppliers
-* 🧾 Orders
-* 🧮 Order Items
-* 📊 Inventory
-* 💳 Payments
+<img src="https://img.shields.io/badge/MySQL-Database-orange?style=for-the-badge&logo=mysql" />
+<img src="https://img.shields.io/badge/SQL-Data%20Analysis-blue?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Business-Analytics-success?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" />
 
 ---
 
-## 📁 Project Structure
+### 🚀 From SQL Fundamentals to Advanced Business Analytics
 
-```
+A structured 15-day SQL learning roadmap covering data extraction, cleaning, transformation, KPI analysis, query optimization, and real-world business problem-solving using MySQL.
+
+📈 **Data Analysis** • 🗄️ **Database Management** • 📊 **Business Intelligence** • 🚀 **Portfolio Project**
+
+</div>
+
+---
+
+# 🎯 Project Overview
+
+This repository contains a comprehensive **15-Day MySQL Challenge** designed to build practical SQL skills required for Data Analyst and Business Analyst roles.
+
+The project simulates a real-world retail business environment and demonstrates how SQL can be used to answer business questions, generate KPIs, and uncover actionable insights.
+
+---
+
+# 💡 Business Objectives
+
+✅ Analyze customer purchasing behavior
+
+✅ Track sales and revenue performance
+
+✅ Identify top-performing products
+
+✅ Generate business KPIs
+
+✅ Learn advanced SQL techniques
+
+✅ Prepare for Data Analyst interviews
+
+---
+
+# 🏗️ Retail Database Schema
+
+<p align="center">
+<img src="screenshots/erd_diagram.png" width="90%">
+</p>
+
+The project uses a realistic retail business database consisting of:
+
+| Table | Description |
+|---------|-------------|
+| 👥 Customers | Customer information |
+| 🛍️ Products | Product catalog |
+| 📦 Categories | Product categories |
+| 🚚 Suppliers | Supplier information |
+| 🧾 Orders | Customer orders |
+| 🧮 Order_Items | Product-level transactions |
+| 📊 Inventory | Stock management |
+| 💳 Payments | Payment records |
+
+---
+
+# 🗺️ Learning Roadmap
+
+## 📅 Day-by-Day SQL Journey
+
+| Day | Topic |
+|------|--------|
+| Day 01 | SQL Basics |
+| Day 02 | Filtering Data |
+| Day 03 | Sorting & Grouping |
+| Day 04 | Joins |
+| Day 05 | Subqueries |
+| Day 06 | Window Functions |
+| Day 07 | CASE Statements |
+| Day 08 | Data Cleaning |
+| Day 09 | Date Functions |
+| Day 10 | String Functions |
+| Day 11 | Advanced Aggregations |
+| Day 12 | Query Optimization |
+| Day 13 | Real-World Business Project |
+| Day 14 | KPI Analysis |
+| Day 15 | Final Data Analysis Project |
+
+---
+
+# 📂 Project Structure
+
+```text
 mysql-data-analysis-techniques/
 │
 ├── Day01_Basics/
@@ -44,165 +110,248 @@ mysql-data-analysis-techniques/
 ├── Day14_KPI_Analysis/
 ├── Day15_Final_Project/
 │
-└── README.md
+├── Dataset/
+├── Screenshots/
+├── README.md
+└── retail_database.sql
 ```
 
 ---
 
-## 📅 Learning Roadmap
+# 🔥 SQL Concepts Demonstrated
 
-### 🔹 Day 01 – Basics
+## Day 01 — Basics
 
-* SELECT, DISTINCT, COUNT, SUM, AVG
-* Filtering simple data
+```sql
+SELECT COUNT(*) AS total_customers
+FROM customers;
+```
 
-### 🔹 Day 02 – Filtering
+## Day 04 — Joins
 
-* WHERE, BETWEEN, IN, LIKE
-* Logical conditions
+```sql
+SELECT
+    c.customer_name,
+    o.order_id,
+    o.total_amount
+FROM customers c
+INNER JOIN orders o
+ON c.customer_id = o.customer_id;
+```
 
-### 🔹 Day 03 – Sorting & Grouping
+## Day 06 — Window Functions
 
-* ORDER BY, GROUP BY
-* Aggregations and HAVING
-
-### 🔹 Day 04 – Joins 🔥
-
-* INNER JOIN, LEFT JOIN, RIGHT JOIN
-* Multi-table queries
-
-### 🔹 Day 05 – Subqueries
-
-* Nested queries
-* IN, EXISTS, correlated subqueries
-
-### 🔹 Day 06 – Window Functions
-
-* ROW_NUMBER, RANK, DENSE_RANK
-* Running totals
-
-### 🔹 Day 07 – CASE Statements
-
-* Conditional logic in SQL
-
-### 🔹 Day 08 – Data Cleaning
-
-* Handling NULLs
-* Removing duplicates
-
-### 🔹 Day 09 – Date Functions
-
-* DATE, MONTH, YEAR
-* Time-based analysis
-
-### 🔹 Day 10 – String Functions
-
-* CONCAT, LENGTH, TRIM
-* Text transformations
-
-### 🔹 Day 11 – Advanced Aggregations
-
-* Complex KPIs
-* Multi-level grouping
-
-### 🔹 Day 12 – Performance Optimization
-
-* Indexing
-* Query optimization
-
-### 🔹 Day 13 – Real-World Project
-
-* Business problem solving using SQL
-
-### 🔹 Day 14 – KPI Analysis
-
-* Revenue, Customer Insights
-* Sales performance metrics
-
-### 🔹 Day 15 – Final Project 🚀
-
-* End-to-end data analysis
-* Ready for portfolio
+```sql
+SELECT
+    product_name,
+    revenue,
+    RANK() OVER(
+        ORDER BY revenue DESC
+    ) AS revenue_rank
+FROM sales;
+```
 
 ---
 
-## 📊 Key Skills Demonstrated
+# 📊 SQL Outputs
 
-* SQL Query Writing (Basic → Advanced)
-* Data Cleaning & Transformation
-* Data Analysis & Insights Generation
-* Business KPI Calculation
-* Database Design & Relationships
+## Customer Analysis
 
----
-
-## 🛠️ Tools Used
-
-* MySQL Workbench
-* SQL
-* (Optional) Python for Data Cleaning
-* (Optional) Power BI for Visualization
+<p align="center">
+<img src="screenshots/customer_analysis.png" width="90%">
+</p>
 
 ---
 
-## 📈 Sample Business Questions Solved
+## Revenue Analysis
 
-* What are the top-selling products?
-* Which customers generate the most revenue?
-* What is the monthly sales trend?
-* Which category performs best?
-* Customer segmentation based on spending
+<p align="center">
+<img src="screenshots/revenue_analysis.png" width="90%">
+</p>
 
 ---
 
-## 💼 Project Use Case
+## Product Performance
 
-This project is ideal for:
-
-* Data Analyst Portfolio
-* SQL Practice for Interviews
-* Real-world Business Analysis
-* Resume Projects
+<p align="center">
+<img src="screenshots/product_performance.png" width="90%">
+</p>
 
 ---
 
-## 🔗 How to Use
+# 📈 Business Questions Solved
 
-1. Clone the repository
-2. Import the dataset into MySQL
-3. Navigate to each day folder
-4. Run queries and practice
-5. Build your own insights
+### Customer Analytics
 
----
+- Who are the top spending customers?
+- Which customers generate the highest revenue?
+- What is the average customer order value?
 
-## 🌟 Future Enhancements
+### Sales Analytics
 
-* Add Power BI Dashboard
-* Add Python EDA Notebook
-* Add Machine Learning Predictions
-* Deploy as end-to-end project
+- What are the monthly sales trends?
+- Which products sell the most?
+- What is the highest revenue-generating category?
 
----
+### Inventory Analytics
 
-## 🙌 Author
+- Which products have low stock?
+- Which categories need replenishment?
 
-**Shridhar Patil**
-Aspiring Data Analyst | SQL | Power BI | Python
+### Revenue Analytics
 
----
-
-## ⭐ Support
-
-If you find this project helpful:
-
-* ⭐ Star the repository
-* 🍴 Fork it
-* 📢 Share with others
+- Revenue by month
+- Revenue by category
+- Revenue by supplier
 
 ---
 
-## 📌 Final Note
+# 📊 Key Performance Indicators
 
-This repository is a **complete roadmap to becoming a job-ready data analyst using SQL**.
-Consistency is key — practice daily and build real-world thinking 🚀
+## Revenue KPIs
+
+💰 Total Revenue
+
+💰 Average Order Value
+
+💰 Monthly Revenue Growth
+
+---
+
+## Customer KPIs
+
+👥 Total Customers
+
+👥 Repeat Customer Rate
+
+👥 Customer Lifetime Value
+
+---
+
+## Product KPIs
+
+🛍️ Top Selling Products
+
+🛍️ Category Performance
+
+🛍️ Product Revenue Contribution
+
+---
+
+# 🛠️ Tools & Technologies
+
+| Tool | Purpose |
+|---------|----------|
+| MySQL | Database Management |
+| SQL | Data Analysis |
+| MySQL Workbench | Query Development |
+| Python | Optional Data Cleaning |
+| Power BI | Optional Visualization |
+| GitHub | Version Control |
+
+---
+
+# 🚀 Skills Demonstrated
+
+### SQL
+
+- SQL Query Writing
+- Joins
+- Subqueries
+- Window Functions
+- CTEs
+- Stored Procedures
+
+### Data Analytics
+
+- KPI Analysis
+- Customer Analytics
+- Revenue Analytics
+- Business Reporting
+
+### Database Management
+
+- Relational Databases
+- Schema Design
+- Query Optimization
+- Data Cleaning
+
+---
+
+# 📈 Real-World Applications
+
+This project simulates tasks commonly performed by:
+
+### Data Analysts
+- Business Reporting
+- KPI Monitoring
+- Sales Analysis
+
+### Business Analysts
+- Revenue Analysis
+- Customer Segmentation
+- Trend Identification
+
+### Database Professionals
+- Query Optimization
+- Data Management
+- Database Design
+
+---
+
+# 💼 Portfolio Value
+
+This project demonstrates:
+
+✅ SQL Query Writing
+
+✅ Relational Database Concepts
+
+✅ Data Cleaning Techniques
+
+✅ Business KPI Analysis
+
+✅ Analytical Thinking
+
+✅ Real-World Problem Solving
+
+---
+
+# 🔮 Future Enhancements
+
+### Phase 2
+- Power BI Dashboard
+- SQL Interview Questions
+- KPI Reporting Dashboard
+
+### Phase 3
+- Python EDA Integration
+- Automated Reports
+- Dashboard Deployment
+
+### Phase 4
+- Predictive Analytics
+- Customer Segmentation
+- Sales Forecasting
+
+---
+
+# 👨‍💻 Author
+
+## Shridhar Patil
+
+📧 patilshridhar1958@gmail.com
+
+🐙 GitHub: https://github.com/Shridharpatil1958
+
+🌐 Portfolio: https://chrono-skill-viz.lovable.app/
+
+---
+
+<div align="center">
+
+### ⭐ If this project helped you learn SQL, consider starring the repository.
+
+**Built with MySQL • SQL • Data Analytics • Business Intelligence**
+
+</div>
